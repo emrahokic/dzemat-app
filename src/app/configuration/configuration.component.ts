@@ -12,6 +12,7 @@ import {Schedule} from "../services/models/Schedule";
 export class ConfigurationComponent implements OnInit{
   id:string|null = null;
   message = new FormControl('');
+  sponzoriUrl = new FormControl('');
   // @ts-ignore
   $data: Observable<any> = null;
   data: any;
@@ -32,6 +33,7 @@ export class ConfigurationComponent implements OnInit{
       this.data = data;
       this.message.setValue(data.message);
       this.selection.setValue(data.state);
+      this.sponzoriUrl.setValue(data.sponzoriUrl)
     })
     this.schedule.valueChanges.subscribe((data: any) => {
       console.log(data);
@@ -52,6 +54,7 @@ export class ConfigurationComponent implements OnInit{
     debugger
     this.data.message = this.message.value;
     this.data.state = this.selection.value;
+    this.data.sponzoriUrl = this.sponzoriUrl.value;
     this.firebaseService.SetConfig(this.data).then((s) => {
       console.log('saving config', s);
     });

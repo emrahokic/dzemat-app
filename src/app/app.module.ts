@@ -20,6 +20,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
+import {NgOptimizedImage} from "@angular/common";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA5Cz86b46Qv0oH0ncGt1ONV8eo7X7Ur9Q",
@@ -39,43 +40,44 @@ const firebaseConfig = {
     ConfigurationComponent,
     IndexComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        provideFirebaseApp(() => initializeApp(firebaseConfig)),
 
-    provideAuth(() => {
-      const auth = getAuth();
-      if (location.hostname === 'localhost') {
-        connectAuthEmulator(auth, 'http://127.0.0.1:9099', {disableWarnings: true});
-      }
-      return auth;
-    }),
+        provideAuth(() => {
+            const auth = getAuth();
+            if (location.hostname === 'localhost') {
+                connectAuthEmulator(auth, 'http://127.0.0.1:9099', {disableWarnings: true});
+            }
+            return auth;
+        }),
 
-    provideFirestore(() => {
-      const firestore = getFirestore();
-      if (location.hostname === 'localhost') {
-        connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
-      }
-      return firestore;
-    }),
+        provideFirestore(() => {
+            const firestore = getFirestore();
+            if (location.hostname === 'localhost') {
+                connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
+            }
+            return firestore;
+        }),
 
-    provideStorage(() => {
-      const storage = getStorage();
-      if (location.hostname === 'localhost') {
-        connectStorageEmulator(storage, '127.0.0.1', 5001);
-      }
-      return storage;
-    }),
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatCardModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatListModule,
-  ],
+        provideStorage(() => {
+            const storage = getStorage();
+            if (location.hostname === 'localhost') {
+                connectStorageEmulator(storage, '127.0.0.1', 5001);
+            }
+            return storage;
+        }),
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatCardModule,
+        MatInputModule,
+        MatSelectModule,
+        MatButtonModule,
+        MatListModule,
+        NgOptimizedImage,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

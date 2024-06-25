@@ -16,6 +16,7 @@ export class SlideShowComponent implements OnInit, AfterContentInit {
   state: any;
   clockInterval: any;
   $schedulesOrdered: any;
+  sponzoriUrl: any;
 constructor(private firebaseData: FirebaseDataService) {
 
 }
@@ -41,6 +42,7 @@ constructor(private firebaseData: FirebaseDataService) {
     this.$data.subscribe((data: any) => {
       this.state = data.state;
       this.message = data.message;
+      this.sponzoriUrl = data.sponzoriUrl;
     })
     this.clockInterval = setInterval(()=> {
       this.clock = new Date();
@@ -64,7 +66,7 @@ constructor(private firebaseData: FirebaseDataService) {
 
   showSlides(n:any) {
     let i;
-    let slides = document.getElementsByClassName("mySlides");
+    let slides = document.getElementsByClassName("mySlides_show");
     if (n > this.numberOfImages) {this.slideIndex = 1}
     if (n < 1) {this.slideIndex = this.numberOfImages}
     for (i = 0; i < this.numberOfImages; i++) {

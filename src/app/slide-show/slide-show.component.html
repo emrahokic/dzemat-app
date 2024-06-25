@@ -1,47 +1,48 @@
 
 <div class="container">
-  <div class="logo-container">
+  <div  class="logo-container">
     <img class="logo" src="assets/bajramsko_druzenje.png"/>
     <img src="https://www.dzemat-bosna-salzburg.at/Content/Images/logo_ng.png" alt="Logo" class="logo">
-    <h1 class="clock" style="color:#104461;">{{clock | date : 'HH:mm:ss'}}</h1>
+    <h1 class="clock" style="color:#104461; font-size: 2.5vw">{{clock | date : 'HH:mm:ss'}}</h1>
   </div>
 
   <app-live-info *ngIf="state == 1" [message]="message" class="slideshow-container-info"></app-live-info>
-  <div *ngIf="state == 2" class="slideshow-container" style="flex: 2;justify-content: left!important;">
-    <div class="hexagon-c1">
-      <div class="hexagon">
-        <img src="/assets/mustafa.jpg"   alt="">
-      </div>
-    </div>
-    <div class="hexagon-c2">
-      <div class="hexagon">
-        <img src="/assets/ammar-basic.jpg"   alt="">
-      </div>
-    </div>
-    <div class="hexagon-c3">
-      <div class="hexagon hexagon-text">
-        <div style="text-align: center;">
-          <p style="font-weight: bold; letter-spacing: 4px">Tribühne Lehen</p>
-          <p style="letter-spacing: 4px">TULPENSTRASSE 1</p>
-        </div>
-        <mat-icon class="my-mat-icon" fontIcon="location_on"></mat-icon>
-      </div>
-    </div>
-    <div class="hexagon-c4">
-      <div class="hexagon">
-        <img src="/assets/ibrahim.jpg"   alt="">
-      </div>
-    </div>
-    <div class="hexagon-c5">
-      <div class="hexagon">
-        <img src="/assets/jennis.jpg"   alt="">
-      </div>
-    </div>
-<!--    <div class="mySlides-fixed fade" >-->
-<!--      <div class="image-wrapper" style="display: block !important;">-->
-<!--        <img src="./assets/flajer2.png"  width="100" height="100" alt="Image 1">-->
+  <div *ngIf="state == 2" class="slideshow-container flex-justify-center" style="flex: 1.5;justify-content: left!important;">
+
+<!--    <div class="hexagon-c1">-->
+<!--      <div class="hexagon">-->
+<!--        <img src="/assets/mustafa.jpg"   alt="">-->
 <!--      </div>-->
 <!--    </div>-->
+<!--    <div class="hexagon-c2">-->
+<!--      <div class="hexagon">-->
+<!--        <img src="/assets/ammar-basic.jpg"   alt="">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="hexagon-c3">-->
+<!--      <div class="hexagon hexagon-text">-->
+<!--        <div style="text-align: center;">-->
+<!--          <p style="font-weight: bold; letter-spacing: 4px">Tribühne Lehen</p>-->
+<!--          <p style="letter-spacing: 4px">TULPENSTRASSE 1</p>-->
+<!--        </div>-->
+<!--        <mat-icon class="my-mat-icon" fontIcon="location_on"></mat-icon>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="hexagon-c4">-->
+<!--      <div class="hexagon">-->
+<!--        <img src="/assets/ibrahim.jpg"   alt="">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="hexagon-c5">-->
+<!--      <div class="hexagon">-->
+<!--        <img src="/assets/jennis.jpg"   alt="">-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="mySlides-fixed fade" >
+      <div class="image-wrapper" style="display: block !important;">
+        <img src="./assets/ucesnici.png"  style="width: 30vw" alt="Image 1">
+      </div>
+    </div>
   </div>
 
   <div *ngIf="state == 2" class="program-container">
@@ -56,9 +57,17 @@
 
   <div *ngIf="state == 3" class="slideshow-container">
 
-    <div class="mySlides fade" *ngFor="let item of fakeArray; let i = index">
+    <div class="mySlides mySlides_show fade" *ngFor="let item of fakeArray; let i = index">
       <div class="image-wrapper">
         <img src="./assets/dzemat-img-{{i}}.jpg"  width="100" height="100" alt="Image 1">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="state == 4" class="slideshow-container flex-justify-center" style="flex: 3;">
+
+    <div class="mySlides fade" >
+      <div style="width: 100%; height: 100%;">
+        <img [ngSrc]="sponzoriUrl" width="100" height="100" alt="Image 1">
       </div>
     </div>
   </div>

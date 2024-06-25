@@ -261,7 +261,7 @@ textarea {
 }
 
 .logo {
-  width: 50vh;
+  width: 30vw;
 }
 
 .slideshow-container {
@@ -281,9 +281,12 @@ textarea {
   justify-content: center;
 }
 .mySlides {
-  display: none;
   height: 100%;
   width: 100%;
+}
+.mySlides_show
+{
+  display: none;
 }
 .mySlides-fixed {
   display: block;
@@ -376,373 +379,376 @@ img {
 
 
 
-
-
-
-
-
-@media (max-width: 3840px) {
-  .schedule {
-    width: 90%;
-  }
-
-  .schedule-item {
-    padding: 75px;
-    font-size: calc((.4em + 1vmin) + (.4em + 1vmax));
-  }
-  .schedule-item-active {
-    padding: 75px;
-    font-size: calc((.4em + 1vmin) + (.4em + 1vmax));
-  }
-
-  .schedule-item-active::before {
-    width: 10px;
-    left: -10px;
-  }
-  .schedule-item::before {
-    width: 10px;
-    left: -10px;
-
-  }
-
-  .schedule-item::after {
-    width: 70px;
-    height: 70px;
-  }
-
-  .schedule-item-active::after {
-    width: 70px;
-    height: 70px;
-  }
-
-  .schedule-item:last-child::before {
-    bottom: 50%;
-  }
-  .schedule-item-active:last-child::before {
-    bottom: 50%;
-  }
-
-
-  .clock{
-  font-size:  calc((.4em + 1vmin) + (.4em + 1vmax));
-  }
-  .hexagon {
-    width: 750px; /* Set a specific width for the container */
-    height: 750px; /* Set a specific height for the container */
-    position: relative;
-    overflow: hidden; /* Ensure any overflow is hidden */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
-
-  .hexagon img {
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 100%; /* Ensure the image takes up the full height of the container */
-    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
-    border-radius: 10px; /* Slightly rounded corners */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
-
-  .hexagon-c1 {
-    position: absolute;
-    top: 350px;
-  }
-  .hexagon-c2 {
-    position: absolute;
-    top: 0;
-    left: 600px;
-  }
-  .hexagon-c3 {
-    position: absolute;
-    top: 710px;
-    left: 600px;
-  }
-  .hexagon-c4 {
-    position: absolute;
-    top: 1070px;
-  }
-  .hexagon-c5 {
-    position: absolute;
-    top: 1430px;
-    left: 600px;
-  }
-  .hexagon-text{
-    background-color: rgba(227, 179, 60, 0.76);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    p{
-      margin: 45px;
-      padding: 0;
-      font-size: xxx-large;
-    }
-  }
-  .my-mat-icon {
-    height: 100px;
-    width: 100px;
-    font-size: 100px;
-    margin-top: 40px;
-  }
+.flex-justify-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (max-width: 2560px) {
-  .schedule {
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    padding-right: 30px;
-  }
-  .schedule-item {
-    font-size: xxx-large;
-  }
-  .hexagon {
-    width: 500px; /* Set a specific width for the container */
-    height: 500px; /* Set a specific height for the container */
-    position: relative;
-    overflow: hidden; /* Ensure any overflow is hidden */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
 
-  .hexagon img {
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 100%; /* Ensure the image takes up the full height of the container */
-    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
-    border-radius: 10px; /* Slightly rounded corners */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
 
-  .hexagon-c1 {
-    position: absolute;
-    top: 240px;
-  }
-  .hexagon-c2 {
-    position: absolute;
-    top: 0;
-    left: 400px;
-  }
-  .hexagon-c3 {
-    position: absolute;
-    top: 475px;
-    left: 400px;
-  }
-  .hexagon-c4 {
-    position: absolute;
-    top: 710px;
-  }
-  .hexagon-c5 {
-    position: absolute;
-    top: 945px;
-    left: 400px;
-  }
 
-  .hexagon-text{
-    background-color: rgba(227, 179, 60, 0.76);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    p{
-      margin: 25px;
-      padding: 0;
-      font-size: xx-large;
-    }
-  }
-  .my-mat-icon {
-    height: 80px;
-    width: 80px;
-    font-size: 80px;
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 1920px) {
-  //
-  //.hexagon {
-  //  width: 310px; /* Set a specific width for the container */
-  //  height: 310px; /* Set a specific height for the container */
-  //  position: relative;
-  //  overflow: hidden; /* Ensure any overflow is hidden */
-  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  //}
-  //
-  //.hexagon img {
-  //  width: 100%; /* Ensure the image takes up the full width of the container */
-  //  height: 100%; /* Ensure the image takes up the full height of the container */
-  //  object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
-  //  border-radius: 10px; /* Slightly rounded corners */
-  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  //}
-  //
-  //.hexagon-c1 {
-  //  position: absolute;
-  //  top: 145px;
-  //}
-  //.hexagon-c2 {
-  //  position: absolute;
-  //  top: 0;
-  //  left: 250px;
-  //}
-  //.hexagon-c3 {
-  //  position: absolute;
-  //  top: 295px;
-  //  left: 250px;
-  //}
-  //.hexagon-c4 {
-  //  position: absolute;
-  //  top: 440px;
-  //}
-  //.hexagon-c5 {
-  //  position: absolute;
-  //  top: 590px;
-  //  left: 250px;
-  //}
-  .schedule-item {
-    font-size: xx-large;
-  }
-  .hexagon {
-    width: 370px; /* Set a specific width for the container */
-    height: 370px; /* Set a specific height for the container */
-    position: relative;
-    overflow: hidden; /* Ensure any overflow is hidden */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
-
-  .hexagon img {
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 100%; /* Ensure the image takes up the full height of the container */
-    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
-    border-radius: 10px; /* Slightly rounded corners */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
-
-  .hexagon-c1 {
-    position: absolute;
-    top: 173px;
-  }
-  .hexagon-c2 {
-    position: absolute;
-    top: 0;
-    left: 300px;
-  }
-  .hexagon-c3 {
-    position: absolute;
-    top: 350px;
-    left: 300px;
-  }
-  .hexagon-c4 {
-    position: absolute;
-    top: 525px;
-  }
-  .hexagon-c5 {
-    position: absolute;
-    top: 700px;
-    left: 300px;
-  }
-
-  .hexagon-text{
-    background-color: rgba(227, 179, 60, 0.76);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    p{
-      margin: 15px;
-      padding: 0;
-      font-size: x-large;
-    }
-  }
-  .my-mat-icon {
-    height: 60px;
-    width: 60px;
-    font-size: 60px;
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .hexagon {
-    width: 250px; /* Set a specific width for the container */
-    height: 250px; /* Set a specific height for the container */
-    position: relative;
-    overflow: hidden; /* Ensure any overflow is hidden */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
-
-  .hexagon img {
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 100%; /* Ensure the image takes up the full height of the container */
-    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
-    border-radius: 10px; /* Slightly rounded corners */
-    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
-  }
-
-  .hexagon-c1 {
-    position: absolute;
-    top: 120px;
-  }
-  .hexagon-c2 {
-    position: absolute;
-    top: 0;
-    left: 200px;
-  }
-  .hexagon-c3 {
-    position: absolute;
-    top: 235px;
-    left: 200px;
-  }
-  .hexagon-c4 {
-    position: absolute;
-    top: 353px;
-  }
-
-  .hexagon-c5 {
-    position: absolute;
-    top: 470px;
-    left: 200px;
-  }
-
-  .hexagon-text{
-    background-color: rgba(227, 179, 60, 0.76);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: white;
-    p{
-      margin: 5px;
-      padding: 0;
-      font-size: medium;
-    }
-  }
-  .my-mat-icon {
-    height: 35px;
-    width: 35px;
-    font-size: 35px;
-    margin-top: 20px;
-  }
-  .schedule-item {
-    font-size: large;
-  }
-
-}
+//@media (max-width: 3840px) {
+//  .schedule {
+//    width: 90%;
+//  }
+//
+//  .schedule-item {
+//    padding: 75px;
+//    font-size: calc((.4em + 1vmin) + (.4em + 1vmax));
+//  }
+//  .schedule-item-active {
+//    padding: 75px;
+//    font-size: calc((.4em + 1vmin) + (.4em + 1vmax));
+//  }
+//
+//  .schedule-item-active::before {
+//    width: 10px;
+//    left: -10px;
+//  }
+//  .schedule-item::before {
+//    width: 10px;
+//    left: -10px;
+//
+//  }
+//
+//  .schedule-item::after {
+//    width: 70px;
+//    height: 70px;
+//  }
+//
+//  .schedule-item-active::after {
+//    width: 70px;
+//    height: 70px;
+//  }
+//
+//  .schedule-item:last-child::before {
+//    bottom: 50%;
+//  }
+//  .schedule-item-active:last-child::before {
+//    bottom: 50%;
+//  }
+//
+//
+//  .clock{
+//  font-size:  calc((.4em + 1vmin) + (.4em + 1vmax));
+//  }
+//  .hexagon {
+//    width: 750px; /* Set a specific width for the container */
+//    height: 750px; /* Set a specific height for the container */
+//    position: relative;
+//    overflow: hidden; /* Ensure any overflow is hidden */
+//    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  }
+//
+//  .hexagon img {
+//    width: 100%; /* Ensure the image takes up the full width of the container */
+//    height: 100%; /* Ensure the image takes up the full height of the container */
+//    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+//    border-radius: 10px; /* Slightly rounded corners */
+//    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  }
+//
+//  .hexagon-c1 {
+//    position: absolute;
+//    top: 350px;
+//  }
+//  .hexagon-c2 {
+//    position: absolute;
+//    top: 0;
+//    left: 600px;
+//  }
+//  .hexagon-c3 {
+//    position: absolute;
+//    top: 710px;
+//    left: 600px;
+//  }
+//  .hexagon-c4 {
+//    position: absolute;
+//    top: 1070px;
+//  }
+//  .hexagon-c5 {
+//    position: absolute;
+//    top: 1430px;
+//    left: 600px;
+//  }
+//  .hexagon-text{
+//    background-color: rgba(227, 179, 60, 0.76);
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    flex-direction: column;
+//    color: white;
+//    p{
+//      margin: 45px;
+//      padding: 0;
+//      font-size: xxx-large;
+//    }
+//  }
+//  .my-mat-icon {
+//    height: 100px;
+//    width: 100px;
+//    font-size: 100px;
+//    margin-top: 40px;
+//  }
+//}
+//
+//@media (max-width: 2560px) {
+//  .schedule {
+//    padding: 20px;
+//    border-radius: 8px;
+//    width: 80%;
+//    padding-right: 30px;
+//  }
+//  .schedule-item {
+//    font-size: xxx-large;
+//  }
+//  .hexagon {
+//    width: 500px; /* Set a specific width for the container */
+//    height: 500px; /* Set a specific height for the container */
+//    position: relative;
+//    overflow: hidden; /* Ensure any overflow is hidden */
+//    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  }
+//
+//  .hexagon img {
+//    width: 100%; /* Ensure the image takes up the full width of the container */
+//    height: 100%; /* Ensure the image takes up the full height of the container */
+//    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+//    border-radius: 10px; /* Slightly rounded corners */
+//    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  }
+//
+//  .hexagon-c1 {
+//    position: absolute;
+//    top: 240px;
+//  }
+//  .hexagon-c2 {
+//    position: absolute;
+//    top: 0;
+//    left: 400px;
+//  }
+//  .hexagon-c3 {
+//    position: absolute;
+//    top: 475px;
+//    left: 400px;
+//  }
+//  .hexagon-c4 {
+//    position: absolute;
+//    top: 710px;
+//  }
+//  .hexagon-c5 {
+//    position: absolute;
+//    top: 945px;
+//    left: 400px;
+//  }
+//
+//  .hexagon-text{
+//    background-color: rgba(227, 179, 60, 0.76);
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//    flex-direction: column;
+//    color: white;
+//    p{
+//      margin: 25px;
+//      padding: 0;
+//      font-size: xx-large;
+//    }
+//  }
+//  .my-mat-icon {
+//    height: 80px;
+//    width: 80px;
+//    font-size: 80px;
+//    margin-top: 20px;
+//  }
+//}
+//
+//@media (max-width: 1920px) {
+//  //
+//  //.hexagon {
+//  //  width: 310px; /* Set a specific width for the container */
+//  //  height: 310px; /* Set a specific height for the container */
+//  //  position: relative;
+//  //  overflow: hidden; /* Ensure any overflow is hidden */
+//  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  //}
+//  //
+//  //.hexagon img {
+//  //  width: 100%; /* Ensure the image takes up the full width of the container */
+//  //  height: 100%; /* Ensure the image takes up the full height of the container */
+//  //  object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+//  //  border-radius: 10px; /* Slightly rounded corners */
+//  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  //}
+//  //
+//  //.hexagon-c1 {
+//  //  position: absolute;
+//  //  top: 145px;
+//  //}
+//  //.hexagon-c2 {
+//  //  position: absolute;
+//  //  top: 0;
+//  //  left: 250px;
+//  //}
+//  //.hexagon-c3 {
+//  //  position: absolute;
+//  //  top: 295px;
+//  //  left: 250px;
+//  //}
+//  //.hexagon-c4 {
+//  //  position: absolute;
+//  //  top: 440px;
+//  //}
+//  //.hexagon-c5 {
+//  //  position: absolute;
+//  //  top: 590px;
+//  //  left: 250px;
+//  //}
+//  .schedule-item {
+//    font-size: xx-large;
+//  }
+//  //.hexagon {
+//  //  width: 370px; /* Set a specific width for the container */
+//  //  height: 370px; /* Set a specific height for the container */
+//  //  position: relative;
+//  //  overflow: hidden; /* Ensure any overflow is hidden */
+//  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  //}
+//  //
+//  //.hexagon img {
+//  //  width: 100%; /* Ensure the image takes up the full width of the container */
+//  //  height: 100%; /* Ensure the image takes up the full height of the container */
+//  //  object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+//  //  border-radius: 10px; /* Slightly rounded corners */
+//  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  //}
+//  //
+//  //.hexagon-c1 {
+//  //  position: absolute;
+//  //  top: 173px;
+//  //}
+//  //.hexagon-c2 {
+//  //  position: absolute;
+//  //  top: 0;
+//  //  left: 300px;
+//  //}
+//  //.hexagon-c3 {
+//  //  position: absolute;
+//  //  top: 350px;
+//  //  left: 300px;
+//  //}
+//  //.hexagon-c4 {
+//  //  position: absolute;
+//  //  top: 525px;
+//  //}
+//  //.hexagon-c5 {
+//  //  position: absolute;
+//  //  top: 700px;
+//  //  left: 300px;
+//  //}
+//  //
+//  //.hexagon-text{
+//  //  background-color: rgba(227, 179, 60, 0.76);
+//  //  display: flex;
+//  //  align-items: center;
+//  //  justify-content: center;
+//  //  flex-direction: column;
+//  //  color: white;
+//  //  p{
+//  //    margin: 15px;
+//  //    padding: 0;
+//  //    font-size: x-large;
+//  //  }
+//  //}
+//  //.my-mat-icon {
+//  //  height: 60px;
+//  //  width: 60px;
+//  //  font-size: 60px;
+//  //  margin-top: 20px;
+//  //}
+//}
+//
+//@media (max-width: 1280px) {
+//  //.hexagon {
+//  //  width: 250px; /* Set a specific width for the container */
+//  //  height: 250px; /* Set a specific height for the container */
+//  //  position: relative;
+//  //  overflow: hidden; /* Ensure any overflow is hidden */
+//  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  //}
+//  //
+//  //.hexagon img {
+//  //  width: 100%; /* Ensure the image takes up the full width of the container */
+//  //  height: 100%; /* Ensure the image takes up the full height of the container */
+//  //  object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+//  //  border-radius: 10px; /* Slightly rounded corners */
+//  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+//  //}
+//  //
+//  //.hexagon-c1 {
+//  //  position: absolute;
+//  //  top: 120px;
+//  //}
+//  //.hexagon-c2 {
+//  //  position: absolute;
+//  //  top: 0;
+//  //  left: 200px;
+//  //}
+//  //.hexagon-c3 {
+//  //  position: absolute;
+//  //  top: 235px;
+//  //  left: 200px;
+//  //}
+//  //.hexagon-c4 {
+//  //  position: absolute;
+//  //  top: 353px;
+//  //}
+//  //
+//  //.hexagon-c5 {
+//  //  position: absolute;
+//  //  top: 470px;
+//  //  left: 200px;
+//  //}
+//  //
+//  //.hexagon-text{
+//  //  background-color: rgba(227, 179, 60, 0.76);
+//  //  display: flex;
+//  //  align-items: center;
+//  //  justify-content: center;
+//  //  flex-direction: column;
+//  //  color: white;
+//  //  p{
+//  //    margin: 5px;
+//  //    padding: 0;
+//  //    font-size: medium;
+//  //  }
+//  //}
+//  //.my-mat-icon {
+//  //  height: 35px;
+//  //  width: 35px;
+//  //  font-size: 35px;
+//  //  margin-top: 20px;
+//  //}
+//  .schedule-item {
+//    font-size: large;
+//  }
+//
+//}
 
 
 
 
 .schedule {
-  padding: 20px;
   border-radius: 8px;
-  width: 75%;
-  padding-right: 30px;
+  width: 85%;
 }
 .schedule-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
+  font-size: 1.7vw;
+  padding: 2.5vw 0;
   position: relative;
 }
 .schedule-item-active {
@@ -754,48 +760,48 @@ img {
 }
 
 .schedule-item-active::before {
-  content: '';
+  content: "";
   position: absolute;
-  left: -1px; /* Adjust this to align with the time column */
+  left: -1.7vw;
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 0.2vw;
   background-color: #daa520;
 }
 .schedule-item::before {
-  content: '';
+  content: "";
   position: absolute;
-  left: -1px; /* Adjust this to align with the time column */
+  left: -1.7vw;
   top: 0;
   bottom: 0;
-  width: 2px;
+  width: 0.2vw;
   background-color: #daa520;
 }
 
 .schedule-item::after {
-  content: '';
+  content: "";
   position: absolute;
-  left: -10px; /* Adjust this to center the circle */
+  left: -2.5vw;
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  width: 1.5vw;
+  height: 1.5vw;
   background-color: #ffffff;
-  border: 2px solid #daa520;
+  border: 0.19vw solid #daa520;
   border-radius: 50%;
   z-index: 1;
 }
 
 .schedule-item-active::after {
-  content: '';
+  content: "";
   position: absolute;
-  left: -10px; /* Adjust this to center the circle */
+  left: -2.5vw;
   top: 50%;
   transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
+  width: 1.5vw;
+  height: 1.5vw;
   background-color: #daa520;
-  border: 2px solid #daa520;
+  border: 0.19vw solid #daa520;
   border-radius: 50%;
   z-index: 1;
 }
