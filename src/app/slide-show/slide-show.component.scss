@@ -1,0 +1,865 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.logo-container {
+  flex: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 20px; /* Add some padding if needed */
+}
+
+.logo {
+  width: 50vh;
+}
+
+.slideshow-container {
+  flex: 3.5;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+.slideshow-container-info {
+  flex: 4;
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mySlides {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.mySlides-fixed {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px; /* Adjust the value for more or less rounded corners */
+}
+
+img {
+
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* Cover the entire container */
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.image-container-rounded {
+  width: 200px; /* Set a specific width for the container */
+  height: 200px; /* Set a specific height for the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(50%); /* Clip the image to a circle */
+}
+
+.image-container-rounded img {
+  width: 100%; /* Ensure the image takes up the full width of the container */
+  height: 100%; /* Ensure the image takes up the full height of the container */
+  object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 3840px) {
+  .schedule {
+    width: 90%;
+  }
+
+  .schedule-item {
+    padding: 75px;
+    font-size: calc((.4em + 1vmin) + (.4em + 1vmax));
+  }
+  .schedule-item-active {
+    padding: 75px;
+    font-size: calc((.4em + 1vmin) + (.4em + 1vmax));
+  }
+
+  .schedule-item-active::before {
+    width: 10px;
+    left: -10px;
+  }
+  .schedule-item::before {
+    width: 10px;
+    left: -10px;
+
+  }
+
+  .schedule-item::after {
+    width: 70px;
+    height: 70px;
+  }
+
+  .schedule-item-active::after {
+    width: 70px;
+    height: 70px;
+  }
+
+  .schedule-item:last-child::before {
+    bottom: 50%;
+  }
+  .schedule-item-active:last-child::before {
+    bottom: 50%;
+  }
+
+
+  .clock{
+  font-size:  calc((.4em + 1vmin) + (.4em + 1vmax));
+  }
+  .hexagon {
+    width: 750px; /* Set a specific width for the container */
+    height: 750px; /* Set a specific height for the container */
+    position: relative;
+    overflow: hidden; /* Ensure any overflow is hidden */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Ensure the image takes up the full height of the container */
+    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+    border-radius: 10px; /* Slightly rounded corners */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon-c1 {
+    position: absolute;
+    top: 350px;
+  }
+  .hexagon-c2 {
+    position: absolute;
+    top: 0;
+    left: 600px;
+  }
+  .hexagon-c3 {
+    position: absolute;
+    top: 710px;
+    left: 600px;
+  }
+  .hexagon-c4 {
+    position: absolute;
+    top: 1070px;
+  }
+  .hexagon-c5 {
+    position: absolute;
+    top: 1430px;
+    left: 600px;
+  }
+  .hexagon-text{
+    background-color: rgba(227, 179, 60, 0.76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    p{
+      margin: 45px;
+      padding: 0;
+      font-size: xxx-large;
+    }
+  }
+  .my-mat-icon {
+    height: 100px;
+    width: 100px;
+    font-size: 100px;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 2560px) {
+  .schedule {
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    padding-right: 30px;
+  }
+  .schedule-item {
+    font-size: xxx-large;
+  }
+  .hexagon {
+    width: 500px; /* Set a specific width for the container */
+    height: 500px; /* Set a specific height for the container */
+    position: relative;
+    overflow: hidden; /* Ensure any overflow is hidden */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Ensure the image takes up the full height of the container */
+    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+    border-radius: 10px; /* Slightly rounded corners */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon-c1 {
+    position: absolute;
+    top: 240px;
+  }
+  .hexagon-c2 {
+    position: absolute;
+    top: 0;
+    left: 400px;
+  }
+  .hexagon-c3 {
+    position: absolute;
+    top: 475px;
+    left: 400px;
+  }
+  .hexagon-c4 {
+    position: absolute;
+    top: 710px;
+  }
+  .hexagon-c5 {
+    position: absolute;
+    top: 945px;
+    left: 400px;
+  }
+
+  .hexagon-text{
+    background-color: rgba(227, 179, 60, 0.76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    p{
+      margin: 25px;
+      padding: 0;
+      font-size: xx-large;
+    }
+  }
+  .my-mat-icon {
+    height: 80px;
+    width: 80px;
+    font-size: 80px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1920px) {
+  //
+  //.hexagon {
+  //  width: 310px; /* Set a specific width for the container */
+  //  height: 310px; /* Set a specific height for the container */
+  //  position: relative;
+  //  overflow: hidden; /* Ensure any overflow is hidden */
+  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  //}
+  //
+  //.hexagon img {
+  //  width: 100%; /* Ensure the image takes up the full width of the container */
+  //  height: 100%; /* Ensure the image takes up the full height of the container */
+  //  object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+  //  border-radius: 10px; /* Slightly rounded corners */
+  //  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  //}
+  //
+  //.hexagon-c1 {
+  //  position: absolute;
+  //  top: 145px;
+  //}
+  //.hexagon-c2 {
+  //  position: absolute;
+  //  top: 0;
+  //  left: 250px;
+  //}
+  //.hexagon-c3 {
+  //  position: absolute;
+  //  top: 295px;
+  //  left: 250px;
+  //}
+  //.hexagon-c4 {
+  //  position: absolute;
+  //  top: 440px;
+  //}
+  //.hexagon-c5 {
+  //  position: absolute;
+  //  top: 590px;
+  //  left: 250px;
+  //}
+  .schedule-item {
+    font-size: xx-large;
+  }
+  .hexagon {
+    width: 370px; /* Set a specific width for the container */
+    height: 370px; /* Set a specific height for the container */
+    position: relative;
+    overflow: hidden; /* Ensure any overflow is hidden */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Ensure the image takes up the full height of the container */
+    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+    border-radius: 10px; /* Slightly rounded corners */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon-c1 {
+    position: absolute;
+    top: 173px;
+  }
+  .hexagon-c2 {
+    position: absolute;
+    top: 0;
+    left: 300px;
+  }
+  .hexagon-c3 {
+    position: absolute;
+    top: 350px;
+    left: 300px;
+  }
+  .hexagon-c4 {
+    position: absolute;
+    top: 525px;
+  }
+  .hexagon-c5 {
+    position: absolute;
+    top: 700px;
+    left: 300px;
+  }
+
+  .hexagon-text{
+    background-color: rgba(227, 179, 60, 0.76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    p{
+      margin: 15px;
+      padding: 0;
+      font-size: x-large;
+    }
+  }
+  .my-mat-icon {
+    height: 60px;
+    width: 60px;
+    font-size: 60px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .hexagon {
+    width: 250px; /* Set a specific width for the container */
+    height: 250px; /* Set a specific height for the container */
+    position: relative;
+    overflow: hidden; /* Ensure any overflow is hidden */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon img {
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 100%; /* Ensure the image takes up the full height of the container */
+    object-fit: cover; /* Cover the container fully, ensuring no part of the image is left out */
+    border-radius: 10px; /* Slightly rounded corners */
+    clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); /* Hexagon shape */
+  }
+
+  .hexagon-c1 {
+    position: absolute;
+    top: 120px;
+  }
+  .hexagon-c2 {
+    position: absolute;
+    top: 0;
+    left: 200px;
+  }
+  .hexagon-c3 {
+    position: absolute;
+    top: 235px;
+    left: 200px;
+  }
+  .hexagon-c4 {
+    position: absolute;
+    top: 353px;
+  }
+
+  .hexagon-c5 {
+    position: absolute;
+    top: 470px;
+    left: 200px;
+  }
+
+  .hexagon-text{
+    background-color: rgba(227, 179, 60, 0.76);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    p{
+      margin: 5px;
+      padding: 0;
+      font-size: medium;
+    }
+  }
+  .my-mat-icon {
+    height: 35px;
+    width: 35px;
+    font-size: 35px;
+    margin-top: 20px;
+  }
+  .schedule-item {
+    font-size: large;
+  }
+
+}
+
+
+
+
+.schedule {
+  padding: 20px;
+  border-radius: 8px;
+  width: 75%;
+  padding-right: 30px;
+}
+.schedule-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  position: relative;
+}
+.schedule-item-active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+  position: relative;
+}
+
+.schedule-item-active::before {
+  content: '';
+  position: absolute;
+  left: -1px; /* Adjust this to align with the time column */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #daa520;
+}
+.schedule-item::before {
+  content: '';
+  position: absolute;
+  left: -1px; /* Adjust this to align with the time column */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #daa520;
+}
+
+.schedule-item::after {
+  content: '';
+  position: absolute;
+  left: -10px; /* Adjust this to center the circle */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border: 2px solid #daa520;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.schedule-item-active::after {
+  content: '';
+  position: absolute;
+  left: -10px; /* Adjust this to center the circle */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: #daa520;
+  border: 2px solid #daa520;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.schedule-item:last-child::before {
+  bottom: 50%;
+}
+.schedule-item-active:last-child::before {
+  bottom: 50%;
+}
+/*.hexagon {*/
+/*  width: 300px; !* Set a specific width for the container *!*/
+/*  height: 300px; !* Set a specific height for the container *!*/
+/*  position: relative;*/
+/*  overflow: hidden; !* Ensure any overflow is hidden *!*/
+/*  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); !* Hexagon shape *!*/
+/*}*/
+
+/*.hexagon img {*/
+/*  width: 100%; !* Ensure the image takes up the full width of the container *!*/
+/*  height: 100%; !* Ensure the image takes up the full height of the container *!*/
+/*  object-fit: cover; !* Cover the container fully, ensuring no part of the image is left out *!*/
+/*  border-radius: 10px; !* Slightly rounded corners *!*/
+/*  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%); !* Hexagon shape *!*/
+/*}*/
+
+/*.hexagon-c1 {*/
+/*  position: absolute;*/
+/*  top: 190px;*/
+/*}*/
+/*.hexagon-c2 {*/
+/*  position: absolute;*/
+/*  top: 50px;*/
+/*  left: 235px;*/
+/*}*/
+/*.hexagon-c3 {*/
+/*  position: absolute;*/
+/*  top: 327px;*/
+/*  left: 235px;*/
+/*}*/
+/*.hexagon-c4 {*/
+/*  position: absolute;*/
+/*  top: 465px;*/
+/*}*/
+
+
+.time {
+  font-weight: bold;
+  white-space: nowrap;
+  color: #104461;
+  text-align: left;
+  padding-left: 20px; /* Space between time and line */
+}
+
+.event {
+  white-space: nowrap;
+  color: #666;
+  padding-left: 20px; /* Space between line and event text */
+}
+/**/
+.program-container {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+

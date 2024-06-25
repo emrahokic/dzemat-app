@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100% !important;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden !important; /* Prevent scrolling */
+}
+
+body{
+
+  background: linear-gradient(rgba(255,255,255,.6), rgba(255,255,255,.9)), url('./assets/bg2.jpg') no-repeat;;
+  background-size: cover;
+}
+
+html, body {
+  height: 100%;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
