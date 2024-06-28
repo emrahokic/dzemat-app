@@ -10,27 +10,56 @@ import {Schedule} from "../services/models/Schedule";
 })
 export class SlideShowComponent implements OnInit, AfterContentInit {
   slideIndex:number = 0;
-  numberOfImages = 342;
+  numberOfImages = 199;
   $data: any = null;
   $schedules: any;
   state: any;
   clockInterval: any;
   $schedulesOrdered: any;
   sponzoriUrl: any;
-constructor(private firebaseData: FirebaseDataService) {
+  images:string[] = [];
+  liveImage: any;
+  liveImageIndex: number = 0;
+  constructor(private firebaseData: FirebaseDataService) {
 
-}
+  }
   ngAfterContentInit(): void {
     this.slideInterval = setInterval(()=> {
       this.plusSlides(1);
-    }, 10000); // Change image every 3 seconds
+    }, 1000*15); // Change image every 3 seconds
   }
 
   title = 'slideshow-dzemat-salzburg';
-
+  getImages(){
+    if(this.images.length == 0){
+      this.firebaseData.getAllImages().then(res => {
+        this.images = [...res];
+        this.liveImageIndex = 0;
+        this.liveImage = this.images[this.liveImageIndex];
+        this.liveImageIndex++;
+      });
+    } else{
+      this.firebaseData.getAllImages().then(res => {
+        for (const resKey of res) {
+          if (!this.images.includes(resKey))
+            this.images.push(resKey)
+        }
+      });
+    }
+    console.log(this.images.length)
+  }
   slideshowContainer: any;
   fakeArray = new Array<any>(this.numberOfImages);
   ngOnInit(): void {
+    this.slideIndex = Number(localStorage.getItem("currentItem"));
+
+    if(Number(localStorage.getItem("currentItem")) > 199){
+      this.slideIndex = 0;
+      localStorage.setItem("currentItem", "0");
+    }
+
+    this.slideshowContainer = document.querySelector('.slideshow-container');
+
     this.$data = this.firebaseData.getDocData("config/default")as  Observable<any>;
 
     this.$schedules = this.firebaseData.getCollectionData<Schedule>("schedules") as Observable<Schedule[]>
@@ -43,16 +72,53 @@ constructor(private firebaseData: FirebaseDataService) {
       this.state = data.state;
       this.message = data.message;
       this.sponzoriUrl = data.sponzoriUrl;
+
+      if( this.state == 3){
+
+      }
+      else if(this.state == 5) {
+        this.liveImageIndex = 0;
+
+        if(this.getNewImagesInterval == null){
+          this.getImages();
+          this.getNewImagesInterval = setInterval(()=>{
+            this.getImages();
+          },1000*60*2)
+        }
+
+        if (this.slideIntervalLiveImages == null){
+          if(this.images.length <= this.liveImageIndex){
+            this.liveImageIndex = 0;
+          }
+          this.liveImage = this.images[this.liveImageIndex];
+          this.liveImageIndex++;
+          this.slideIntervalLiveImages = setInterval(()=> {
+            if(this.images.length <= this.liveImageIndex){
+              this.liveImageIndex = 0;
+            }
+            this.liveImage = this.images[this.liveImageIndex];
+            this.liveImageIndex++;
+          }, 1000 * 15); // Change image every 3 seconds
+        }
+
+      }else{
+        clearInterval(this.slideIntervalLiveImages);
+        clearInterval(this.getNewImagesInterval);
+        this.slideIntervalLiveImages = null;
+        this.getNewImagesInterval = null;
+      }
+
     })
     this.clockInterval = setInterval(()=> {
       this.clock = new Date();
     }, 1000);
-    this.slideIndex = Number(localStorage.getItem("currentItem"));
-    this.slideshowContainer = document.querySelector('.slideshow-container');
+
   }
   //showSlides(slideIndex);c
 
   slideInterval :any= null;
+  slideIntervalLiveImages :any= null;
+  getNewImagesInterval :any= null;
 
   plusSlides(n: any) {
     var i = this.slideIndex += n;

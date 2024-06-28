@@ -63,9 +63,9 @@ const firebaseConfig = {
 
         provideStorage(() => {
             const storage = getStorage();
-            if (location.hostname === 'localhost') {
-                connectStorageEmulator(storage, '127.0.0.1', 5001);
-            }
+            // if (location.hostname === 'localhost') {
+            //     connectStorageEmulator(storage, '127.0.0.1', 5001);
+            // }
             return storage;
         }),
         ReactiveFormsModule,

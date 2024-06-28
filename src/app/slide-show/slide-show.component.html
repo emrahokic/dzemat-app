@@ -71,6 +71,22 @@
       </div>
     </div>
   </div>
+  <div *ngIf="state == 5" class="slideshow-container flex-justify-center" style="flex: 3;">
+
+    <div class="mySlides fade" >
+      <div style="width: 100%; height: 100%;">
+        <img  *ngIf="images.length>0" [ngSrc]="liveImage" width="100" height="100" alt="Image 1">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="state == 6" class="slideshow-container flex-justify-center" style="flex: 3;">
+
+    <div class="mySlides fade" >
+      <div style="width: 100%; height: 100%;">
+        <img src="./assets/cjenovnik.png" width="100" height="100" alt="Image 1">
+      </div>
+    </div>
+  </div>
 </div>
 <script>
   function setCurrentSlide(i){
